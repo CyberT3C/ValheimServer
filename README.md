@@ -5,34 +5,7 @@
 [![GNU GPL v3 License][license-shield]][license-url]
 
 # ValheimServer
-Dedicated Valheim Server inside a Docker Container
-
-Version 0.1 is working. 
-
-## Build the Dockerfile manually
-```bash  
-docker build -t valheimserver-01 .     
-``` 
-
-## Run Docker Container
-```bash  
-docker run -it -p 2456-2458:2456-2458/udp valheimserver-01 bash
-./start_server.sh
-``` 
-missing automatic startup at the moment
-missing port mapping etc, will be added 
-
-
-# Default Settings
-
--name "My server" 
--port 2456 
--world "Dedicated" 
--password "secret"
-
-## NOTE: You need to make sure the ports 2456-2458 is being forwarded to your server through your local router & firewall.all.
-
-
+insert Logo Big
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -65,11 +38,11 @@ missing port mapping etc, will be added
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Valheim Server][product-screenshot]](https:missinglink)
+[![Valheim Server][product-screenshot]](https:missinglink) Missing
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`CyberT3C`, `ValheimServer`, `twitter_handle`, `email`, `project_title`, `project_description`
+Dedicated Valheim Server inside a Docker Container
+
+Version 0.1 is working. 
 
 
 ### Built With
