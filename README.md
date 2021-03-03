@@ -1,6 +1,8 @@
 # ValheimServer
 Dedicated Valheim Server inside a Docker Container
 
+Version 0.1 is working. 
+
 ## Build the Dockerfile manually
 ```bash  
 docker build -t valheimserver-01 .     
