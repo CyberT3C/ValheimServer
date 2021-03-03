@@ -22,8 +22,6 @@ RUN chown -R "${USER}:${USER}" "${HOMEDIR}"
 RUN chown -R "${USER}:${USER}" "${VALHEIMSERVER_DIR}" 
 
 USER ${USER}
-VOLUME ${VALHEIMSERVER_DIR}
-WORKDIR ${VALHEIMSERVER_DIR}
 
 RUN set -e; \
     bash "${STEAMCMDDIR}/steamcmd.sh" +login anonymous \
@@ -32,8 +30,18 @@ RUN set -e; \
                                       +quit
 
 # edit start_server.sh
+# todo
 
+VOLUME ${VALHEIMSERVER_DIR}
 
-expose 2456
-expose 2457
-expose 2458
+EXPOSE 2456
+EXPOSE 2457
+EXPOSE 2458
+
+WORKDIR ${VALHEIMSERVER_DIR}
+ENTRYPOINT ["start_server.sh"]
+
+# future
+# COPY docker-entrypoint.sh /usr/local/bin/
+#ENTRYPOINT ["docker-entrypoint.sh"]
+#CMD ["valheimserverd"]
