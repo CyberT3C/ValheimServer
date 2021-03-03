@@ -4,6 +4,11 @@
 
 FROM cm2network/steamcmd:root
 
+LABEL maintainer="Niklas Bartz"  \
+      name="valheim-server" \
+      version="0.1"
+
+# set env
 # steam is linking software with IDs
 ENV VALHEIMSERVER_APPID 896660
 ENV VALHEIMSERVER_DIR "${HOMEDIR}/valheimserver"
