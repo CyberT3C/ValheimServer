@@ -22,12 +22,6 @@ RUN chown -R "${USER}:${USER}" "${VALHEIMSERVER_DIR}"
 
 USER ${USER}
 
-#RUN set -e; \
-#    bash "${STEAMCMDDIR}/steamcmd.sh" +login anonymous \
-#                                      +force_install_dir "${VALHEIMSERVER_DIR}" \
-#                                      +app_update "${VALHEIMSERVER_APPID}" \
-#                                      +quit
-
 VOLUME ${VALHEIMSERVER_DIR}
 WORKDIR ${VALHEIMSERVER_DIR}
 
