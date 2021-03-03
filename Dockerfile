@@ -2,7 +2,7 @@ FROM cm2network/steamcmd:root
 
 LABEL maintainer="Niklas Bartz" \
       name="valheim-server" \
-      version="latest"
+      version="0.2"
 
 # set env variables
 ENV VALHEIMSERVER_APPID 896660
@@ -32,7 +32,6 @@ VOLUME ${VALHEIMSERVER_DIR}
 WORKDIR ${VALHEIMSERVER_DIR}
 
 COPY docker-entrypoint.sh /usr/local/bin/
-COPY runserver.sh /usr/local/bin/
 
 EXPOSE 2456/udp
 EXPOSE 2457/udp
@@ -40,5 +39,4 @@ EXPOSE 2458/udp
 
 
 ENTRYPOINT ["docker-entrypoint.sh"]
-
 CMD ["run"]
