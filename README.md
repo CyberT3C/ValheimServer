@@ -82,16 +82,16 @@ _For more information, please refer to the [Get Docker](https://docs.docker.com/
    ```
 ### Adavanced with parameters  
   ```sh
-  docker run --name my-custom-valheim-server -d -p 2456-2458:2456-2458/udp valheimserver-02 -name "A real Name" -port "2456" -world "Dockerhein" -password "docker"
+  docker run --name my-custom-valheim-server -d -p 2456-2458:2456-2458/udp cyb3r/valheim-server -name "A real Name" -port "2456" -world "Dockerhein" -password "docker"
   ```
 
 ### Troubleshooting  
   ```sh
   #this will not start the server, so u can search for files or data and check if everything is fine
-  docker run -it -p 2456-2458:2456-2458/udp valheimserver-02 bash
+  docker run -it -p 2456-2458:2456-2458/udp cyb3r/valheim-server bash
 
   # start with full command output
-  docker run -it -p 2456-2458:2456-2458/udp valheimserver-02 -name "A real Name" -port "2456" -world "Dockerhein" -password "docker"
+  docker run -it -p 2456-2458:2456-2458/udp cyb3r/valheim-server -name "A real Name" -port "2456" -world "Dockerhein" -password "docker"
   ```
 You can stop the container by using `ctrl + c`.  
   
