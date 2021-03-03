@@ -6,7 +6,7 @@ FROM cm2network/steamcmd:root
 
 LABEL maintainer="Niklas Bartz"  \
       name="valheim-server" \
-      version="0.1"
+      version="0.11"
 
 # set env
 # steam is linking software with IDs
@@ -43,11 +43,6 @@ WORKDIR ${VALHEIMSERVER_DIR}
 EXPOSE 2456/udp
 EXPOSE 2457/udp
 EXPOSE 2458/udp
-
-
-#COPY ${VALHEIMSERVER_DIR}/start_server.sh /usr/local/bin/
-#ENTRYPOINT ["start_server.sh"]
-#CMD [ "${VALHEIMSERVER_DIR}/start_server.sh" ]
 
 # future
 # COPY docker-entrypoint.sh /usr/local/bin/
