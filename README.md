@@ -98,7 +98,7 @@ You can stop the container by using `ctrl + c`.
 ### Test Locally
 1. Clone the ValheimServer
    ```sh
-   git clone https://github.com/CyberT3C/ValheimServer_name.git
+   git clone https://github.com/CyberT3C/ValheimServer.git
    ```
 2. Build docker image locally
    ```sh
@@ -106,8 +106,7 @@ You can stop the container by using `ctrl + c`.
    ```
 2. start docker container locally
    ```sh
-   docker run -it -p 2456-2458:2456-2458/udp valheimserver-01 bash
-   ./start_server.sh
+   docker run -it -p 2456-2458:2456-2458/udp valheimserver-01 
    ```
 
 
