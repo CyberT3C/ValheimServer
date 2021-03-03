@@ -31,3 +31,9 @@ RUN set -e; \
                                       +app_update "${VALHEIMSERVER_APPID}" \
                                       +quit
 
+# edit start_server.sh
+
+
+expose 2456
+expose 2457
+expose 2458
