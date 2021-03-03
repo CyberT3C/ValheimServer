@@ -70,8 +70,7 @@ You need to install docker on your device. Examples below:
   ... install
   ```
 
-_For more information, please refer to the [Get Docker](https://docs.docker.com/get-docker/)_  
-[Geting started](https://docs.docker.com/get-started/)_  
+_For more information, please refer to the [Get Docker](https://docs.docker.com/get-docker/)  [Geting started](https://docs.docker.com/get-started/)_  
 ### Installation
 
 1. Clone the ValheimServer
