@@ -41,9 +41,9 @@ Todo: Insert Screenshot and maybe link to Dockerhub?
 
 Dedicated Valheim Server inside a Docker Container
 
-### Version 0.2 is out now. 
--Added Parameter passing   
-Note: Changing the port will not work at the moment 
+## Version 0.2 is out now. 
+<font color="green">Added Parameter passing </font>  
+<font color="red">Note: Changing the port will not work at the moment</font>
 
 ### Built With
 Will be added in the future
@@ -70,7 +70,7 @@ You need to install docker on your device. Examples below:
   ... install
   ```
 
-_For more information, please refer to the [Get Docker](https://docs.docker.com/get-docker/)  [Geting started](https://docs.docker.com/get-started/)_  
+_For more information, please refer to the [Get Docker](https://docs.docker.com/get-docker/)   [Geting started](https://docs.docker.com/get-started/)_  
 ### Installation
 1. Pull docker image 
    ```sh
