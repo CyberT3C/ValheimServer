@@ -16,7 +16,7 @@ RUN set -e; \
             echo 'directory = $VALHEIMSERVER_DIR'; \
 	    } > /var/log/valheim_install
 
-RUN mkdir -p "${STEAMAPPDIR}"
+RUN mkdir -p "${VALHEIMSERVER_DIR}"
 
 RUN set -ex; \
 	apt-get update; \
