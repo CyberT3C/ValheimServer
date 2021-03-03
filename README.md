@@ -9,7 +9,7 @@ docker build -t valheimserver-01 .
 ## Run Docker Container
 ```bash  
 docker run -it valheimserver-01
-start_server.sh
+./start_server.sh
 ``` 
 missing automatic startup at the moment
 missing port mapping etc, will be added 
