@@ -8,7 +8,7 @@ docker build -t valheimserver-01 .
 
 ## Run Docker Container
 ```bash  
-docker run -it valheimserver-01
+docker run -it -p 2456-2458:2456-2458/udp valheimserver-01 bash
 ./start_server.sh
 ``` 
 missing automatic startup at the moment
