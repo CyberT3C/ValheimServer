@@ -22,15 +22,23 @@ RUN chown -R "${USER}:${USER}" "${VALHEIMSERVER_DIR}"
 
 USER ${USER}
 
-RUN set -e; \
-    bash "${STEAMCMDDIR}/steamcmd.sh" +login anonymous \
-                                      +force_install_dir "${VALHEIMSERVER_DIR}" \
-                                      +app_update "${VALHEIMSERVER_APPID}" \
-                                      +quit
+#RUN set -e; \
+#    bash "${STEAMCMDDIR}/steamcmd.sh" +login anonymous \
+#                                      +force_install_dir "${VALHEIMSERVER_DIR}" \
+#                                      +app_update "${VALHEIMSERVER_APPID}" \
+#                                      +quit
 
 VOLUME ${VALHEIMSERVER_DIR}
 WORKDIR ${VALHEIMSERVER_DIR}
 
+COPY docker-entrypoint.sh /usr/local/bin/
+COPY runserver.sh /usr/local/bin/
+
 EXPOSE 2456/udp
 EXPOSE 2457/udp
 EXPOSE 2458/udp
+
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+CMD ["run"]
