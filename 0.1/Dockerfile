@@ -33,13 +33,16 @@ RUN set -e; \
 # todo
 
 VOLUME ${VALHEIMSERVER_DIR}
-
-EXPOSE 2456
-EXPOSE 2457
-EXPOSE 2458
-
 WORKDIR ${VALHEIMSERVER_DIR}
-ENTRYPOINT ["start_server.sh"]
+
+EXPOSE 2456/udp
+EXPOSE 2457/udp
+EXPOSE 2458/udp
+
+
+#COPY ${VALHEIMSERVER_DIR}/start_server.sh /usr/local/bin/
+#ENTRYPOINT ["start_server.sh"]
+#CMD [ "${VALHEIMSERVER_DIR}/start_server.sh" ]
 
 # future
 # COPY docker-entrypoint.sh /usr/local/bin/
