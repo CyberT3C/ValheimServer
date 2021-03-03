@@ -15,15 +15,18 @@ RUN set -e; \
             echo "directory = $VALHEIMSERVER_DIR"; \
 	    } > /var/log/valheim_install
 
+
 RUN mkdir -p "${VALHEIMSERVER_DIR}"
 
-RUN chown -R "${USER}:${USER}" "${HOMEDIR}" 
-RUN chown -R "${USER}:${USER}" "${VALHEIMSERVER_DIR}" 
+RUN chown -R "${USER}:${USER}" "${HOMEDIR}" \
+      && chown -R "${USER}:${USER}" "${VALHEIMSERVER_DIR}" 
+
 
 USER ${USER}
 
 VOLUME ${VALHEIMSERVER_DIR}
 WORKDIR ${VALHEIMSERVER_DIR}
+
 
 COPY docker-entrypoint.sh /usr/local/bin/
 

@@ -102,9 +102,9 @@ You can stop the container by using `ctrl + c`.
    ```
 2. Build docker image locally
    ```sh
-   docker build -t valheimserver-01 .
+   docker build --no-cache -t valheimserver-01 .
    ```
-2. start docker container locally
+2. start docker container locally in interactive mode
    ```sh
    docker run -it -p 2456-2458:2456-2458/udp valheimserver-01 
    ```
