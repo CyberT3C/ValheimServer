@@ -3,7 +3,8 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![GNU GPL v3 License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]  
+
 # ValheimServer
 Dedicated Valheim Server inside a Docker Container
 
