@@ -150,7 +150,6 @@ Distributed under the GNU General Public License v3 License. See `LICENSE` for m
 
 Niklas - [@omnificutie](https://twitter.com/omnificutie) 
 
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/CyberT3C/ValheimServer.svg?style=for-the-badge

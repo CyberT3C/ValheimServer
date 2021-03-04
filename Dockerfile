@@ -34,6 +34,5 @@ EXPOSE 2456/udp
 EXPOSE 2457/udp
 EXPOSE 2458/udp
 
-
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["run"]
