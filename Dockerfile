@@ -31,7 +31,7 @@ RUN chown -R "${USER}:${USER}" "${HOMEDIR}" \
 VOLUME ${VALHEIMSERVER_DIR}
 WORKDIR ${VALHEIMSERVER_DIR}
 
-COPY ./docker-entrypoint.sh /home/steam/
+COPY ./docker-entrypoint.sh /home/steam
 RUN chmod +x /home/steam/docker-entrypoint.sh
 
 USER ${USER}
