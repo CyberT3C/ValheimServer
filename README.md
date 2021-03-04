@@ -53,31 +53,26 @@ Todo: make a Logo
 Dedicated Valheim Server inside a Docker Container
 
 Project Goal "Make a clean valheim server base image"
-
-
+- ![#1589F0](https://via.placeholder.com/15/1589F0/000000?text=aTest) `#1589F0`
 
 | **Principles** |   
 |-----------------------------------|
 |  **KISS** *Keep it simple, stupid* |  
 |  **Test First** |  
 
-    My goal is to make a docker image which everyone can run.  
-    Even someone without any network and docker knowledge should be able to runs this.
-    The Image should als be well tested and just run always (this is a little bit in conflict with the unkown valheim server code)  
+  > My goal is to make a docker image which everyone can run.  
+  > Even someone without any network and docker knowledge should be able to runs this.
+  > The Image should als be well tested and just run always (this is a little bit in > conflict with the unkown valheim server code)  
 
 ## Version 0.21 is out now  
 
-<font color="green">
+- ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `Added Parameter passing  `  
+- ![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) `Added Data peristence (Wolrd Data and Player Location) `
 
-+ Added Parameter passing  
-+ Added Data peristence (Wolrd Data and Player Location)   
-  
-</font> 
+- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) ` Changing the port will not work at the moment`  
 
-<font color="red">Note: Changing the port will not work at the moment</font>
+### Built With  
 
-### Built With
-Will be added in the future
 * [Docker](https://docs.docker.com/)
 * [Debian Image](https://hub.docker.com/_/debian)
 * [SteamCMD Image](https://hub.docker.com/r/cm2network/steamcmd)
