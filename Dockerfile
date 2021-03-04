@@ -6,7 +6,7 @@ LABEL maintainer="Niklas Bartz" \
 
 #take env from root image
 ENV USER steam
-ENV HOMEDIR "/home/${USER}"
+ENV HOMEDIR /home/steam
 
 # set env variables
 ENV VALHEIMSERVER_APPID 896660
@@ -31,8 +31,8 @@ RUN chown -R "${USER}:${USER}" "${HOMEDIR}" \
 VOLUME ${VALHEIMSERVER_DIR}
 WORKDIR ${VALHEIMSERVER_DIR}
 
-COPY docker-entrypoint.sh "${HOMEDIR}/"
-RUN chmod +x "${HOMEDIR}/docker-entrypoint.sh"
+COPY ./docker-entrypoint.sh /home/steam/
+RUN chmod +x /home/steam/docker-entrypoint.sh
 
 USER ${USER}
 
@@ -40,5 +40,5 @@ EXPOSE 2456/udp
 EXPOSE 2457/udp
 EXPOSE 2458/udp
 
-ENTRYPOINT ["${HOMEDIR}/docker-entrypoint.sh"]
+ENTRYPOINT ["/home/steam/docker-entrypoint.sh"]
 CMD ["run"]
