@@ -24,7 +24,7 @@ Todo: make a Logo
   - [Roadmap](#roadmap)
 - [ValheimServer](#valheimserver)
   - [About The Project](#about-the-project)
-  - [Version 0.21 is out now.](#version-021-is-out-now)
+  - [Version 0.21 is out now](#version-021-is-out-now)
     - [Built With](#built-with)
     - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
@@ -65,7 +65,8 @@ Project Goal "Make a clean valheim server base image"
     Even someone without any network and docker knowledge should be able to runs this.
     The Image should als be well tested and just run always (this is a little bit in conflict with the unkown valheim server code)  
 
-## Version 0.21 is out now. 
+## Version 0.21 is out now  
+
 <font color="green">
 
 + Added Parameter passing  
