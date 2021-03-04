@@ -4,6 +4,10 @@ LABEL maintainer="Niklas Bartz" \
       name="valheim-server" \
       version="0.2"
 
+#take env from root image
+ENV USER steam
+ENV HOMEDIR "/home/${USER}"
+
 # set env variables
 ENV VALHEIMSERVER_APPID 896660
 ENV VALHEIMSERVER_DIR "${HOMEDIR}/valheimserver"
