@@ -10,39 +10,69 @@ Todo: make a Logo
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
-  </ol>
-</details>
 
+  - [ValheimServer](#valheimserver)
+  - [About The Project](#about-the-project)
+  - [Version 0.2 is out now.](#version-02-is-out-now)
+    - [Built With](#built-with)
+    - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+    - [Adavanced with parameters](#adavanced-with-parameters)
+    - [Test Locally](#test-locally)
+  - [Usage](#usage)
+  - [Roadmap](#roadmap)
+- [ValheimServer](#valheimserver)
+  - [About The Project](#about-the-project)
+  - [Version 0.21 is out now.](#version-021-is-out-now)
+    - [Built With](#built-with)
+    - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+    - [Adavanced with parameters](#adavanced-with-parameters)
+    - [Test Locally](#test-locally)
+  - [Usage](#usage)
+  - [Roadmap](#roadmap)
+- [Help with Docker and Troubleshooting](#help-with-docker-and-troubleshooting)
+  - [Troubleshooting](#troubleshooting)
+  - [Docker on Windows](#docker-on-windows)
+    - [How to access/show volume data](#how-to-accessshow-volume-data)
+    - [Example](#example)
+    - [Get Mountpoint](#get-mountpoint)
+    - [Show data](#show-data)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Contact](#contact)
+  
+</details>
 
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Todo: Insert Screenshot and maybe link to Dockerhub?
 
 Dedicated Valheim Server inside a Docker Container
 
-## Version 0.2 is out now. 
-<font color="green">Added Parameter passing </font>  
+Project Goal "Make a clean valheim server base image"
+
+
+
+| **Principles** |   
+|-----------------------------------|
+|  **KISS** *Keep it simple, stupid* |  
+|  **Test First** |  
+
+    My goal is to make a docker image which everyone can run.  
+    Even someone without any network and docker knowledge should be able to runs this.
+    The Image should als be well tested and just run always (this is a little bit in conflict with the unkown valheim server code)  
+
+## Version 0.21 is out now. 
+<font color="green">
+
++ Added Parameter passing  
++ Added Data peristence (Wolrd Data and Player Location)   
+  
+</font> 
+
 <font color="red">Note: Changing the port will not work at the moment</font>
 
 ### Built With
@@ -54,58 +84,45 @@ Will be added in the future
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+### Getting Started
 
 To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
 You need to install docker on your device. Examples below:
-* Docker on Linux
-  ```sh
-  ... install
-  ```
-* Docker on Windows
-  ```sh
-  ... install
-  ```
+_For more information, please refer to the    
+[Get Docker](https://docs.docker.com/get-docker/)    
+[Geting started](https://docs.docker.com/get-started/)_  
 
-_For more information, please refer to the [Get Docker](https://docs.docker.com/get-docker/)   [Geting started](https://docs.docker.com/get-started/)_  
-### Installation
+## Installation
 1. Pull docker image 
-   ```sh
+   ```docker
    docker pull cyb3r/valheim-server
    ```
 2. Run the docker container
-   ```sh
+   ```docker
    docker run --name my-custom-valheim-server -d -p 2456-2458:2456-2458/udp cyb3r/valheim-server
    ```
+
 ### Adavanced with parameters  
-  ```sh
+  ```docker
   docker run --name my-custom-valheim-server -d -p 2456-2458:2456-2458/udp cyb3r/valheim-server -name "A real Name" -port "2456" -world "Dockerhein" -password "docker"
   ```
 
-### Troubleshooting  
-  ```sh
-  #this will not start the server, so u can search for files or data and check if everything is fine
-  docker run -it -p 2456-2458:2456-2458/udp cyb3r/valheim-server bash
 
-  # start with full command output
-  docker run -it -p 2456-2458:2456-2458/udp cyb3r/valheim-server -name "A real Name" -port "2456" -world "Dockerhein" -password "docker"
-  ```
-You can stop the container by using `ctrl + c`.  
   
 ### Test Locally
 1. Clone the ValheimServer
-   ```sh
+   ```git
    git clone https://github.com/CyberT3C/ValheimServer.git
    ```
 2. Build docker image locally
-   ```sh
+   ```docker
    docker build --no-cache -t valheimserver-01 .
    ```
 2. start docker container locally in interactive mode
-   ```sh
+   ```docker
    docker run -it -p 2456-2458:2456-2458/udp valheimserver-01 
    ```
 
@@ -115,15 +132,56 @@ You can stop the container by using `ctrl + c`.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Examples and Screenshots will be added in the future
+Examples and Screenshots will be added in the future  
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/CyberT3C/ValheimServer/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/CyberT3C/ValheimServer/issues) for a list of proposed features (and known issues).  
 
 
+# Help with Docker and Troubleshooting
+## Troubleshooting  
+  ```docker
+  #this will not start the server, so u can search for files or data and check if everything is fine
+  docker run -it -p 2456-2458:2456-2458/udp cyb3r/valheim-server bash
+
+  # start with full command output
+  docker run -it -p 2456-2458:2456-2458/udp cyb3r/valheim-server -name "A real Name" -port "2456" -world "Dockerhein" -password "docker"
+  ```
+You can stop the container by using `ctrl + c`.  
+
+
+## Docker on Windows
+### How to access/show volume data
+
+<font color="red">run a shell (e.g. powershell, mingw) as adminstrator</font>   
+```docker
+docker run --rm -it -v /:/vm-root alpine:edge ls -l /vm-root/yourpath
+```
+
+### Example
+### Get Mountpoint
+```docker
+docker volume ls
+docker volume inspect b73773dc39e689cc5be0f538f3f59aa04dcc6f4eb5fcdadf70e6d632b48ee6c8
+```
+```json
+{
+        "CreatedAt": "2021-03-04T13:45:14Z",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/b73773dc39e689cc5be0f538f3f59aa04dcc6f4eb5fcdadf70e6d632b48ee6c8/_data",
+        "Name": "b73773dc39e689cc5be0f538f3f59aa04dcc6f4eb5fcdadf70e6d632b48ee6c8",
+        "Options": null,
+        "Scope": "local"
+    }
+```
+### Show data 
+```docker
+docker run --rm -it -v /:/vm-root alpine:edge ls -l /vm-root/var/lib/docker/volumes/b73773dc39e689cc5be0f538f3f59aa04dcc6f4eb5fcdadf70e6d632b48ee6c8/_data/
+```
 
 <!-- CONTRIBUTING -->
 ## Contributing
