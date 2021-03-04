@@ -2,7 +2,7 @@ FROM cm2network/steamcmd:root
 
 LABEL maintainer="Niklas Bartz" \
       name="valheim-server" \
-      version="0.2"
+      version="0.21"
 
 #take env from root image
 ENV USER steam
