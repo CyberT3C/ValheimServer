@@ -22,17 +22,19 @@ RUN chown -R "${USER}:${USER}" "${HOMEDIR}" \
       && chown -R "${USER}:${USER}" "${VALHEIMSERVER_DIR}" 
 
 
-USER ${USER}
+
 
 VOLUME ${VALHEIMSERVER_DIR}
 WORKDIR ${VALHEIMSERVER_DIR}
 
+COPY docker-entrypoint.sh "${HOMEDIR}/"
+RUN chmod +x "${HOMEDIR}/docker-entrypoint.sh"
 
-COPY docker-entrypoint.sh /usr/local/bin/
+USER ${USER}
 
 EXPOSE 2456/udp
 EXPOSE 2457/udp
 EXPOSE 2458/udp
 
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["${HOMEDIR}/docker-entrypoint.sh"]
 CMD ["run"]
