@@ -24,15 +24,15 @@ _main() {
     # if command starts with an option
 	if [ "${1:0:1}" = '-' ]; then
         _server_update
-		${VALHEIMSERVER_DIR}/valheim_server.x86_64 "$@"
+		exec ${VALHEIMSERVER_DIR}/valheim_server.x86_64 "$@"
 	fi
 
     if [ "$1" = 'run' ]; then
         _server_update
-        "${VALHEIMSERVER_DIR}/valheim_server.x86_64" -name "My server" \
-                                                  -port "2456" \
-                                                  -world "Dedicated" \
-                                                  -password "secret"
+        exec "${VALHEIMSERVER_DIR}/valheim_server.x86_64" -name "My server" \
+                                                            -port "2456" \
+                                                            -world "Dedicated" \
+                                                            -password "secret"
     fi
     exec "$@"
 }
